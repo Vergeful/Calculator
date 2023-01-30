@@ -29,6 +29,13 @@ function populateScreen(){
     const output = document.querySelector('.output');
 
     buttons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            button.classList.add('hovered');
+        });
+        button.addEventListener('mouseleave', () => {
+            button.classList.remove('hovered');
+        });
+
         button.addEventListener('click', () => {
             if (button.textContent === "C"){
                 displayValue = "";
@@ -36,6 +43,8 @@ function populateScreen(){
             } else if (button.textContent === "DEL"){
                 displayValue = displayValue.substring(0, displayValue.length-1);
                 output.innerText = displayValue;
+            }else if(button.textContent === "="){
+
             }else{
                 displayValue += button.textContent;
                 output.innerText = displayValue;
