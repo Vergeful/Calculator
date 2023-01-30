@@ -92,3 +92,7 @@ body{
 .hovered{
     background-color: pink;
 }
+
+.disabled{
+    pointer-events: none;
+}
